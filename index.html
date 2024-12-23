@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinika Operatori Yordamchi Sayt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        #recommendation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            margin: 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        li.green {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+
+        input[type="text"] {
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        #recommendation {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Klinika Operatori Yordamchi Sayt</h1>
+        <div id="recommendation">Mahsulot tavsiyasi bu yerda ko'rsatiladi.</div>
+        <ul id="questions">
+            <li>1) Assalamu alaykum</li>
+            <li>2) Sizni Plan Baby klinikasidan bezovta qilyapman, bizning Vortex gijja va parazitlarga qarshi
+                mahsulotimizga qiziqish bildirgan ekansiz, shundaymi? Ozgina vaqt ajrata olasizmi?</li>
+            <li>3) Ismingizni bilsam bo'ladimi? <input type="text" id="nameInput" placeholder="Ismingizni kiriting">
+            </li>
+            <li>4) Mani ismim Abdulloh Abdurahmonov, Vortex mahsuloti bo'yicha mutaxassis konsultantman.</li>
+            <li>5) Xo'p opajon/akajon, mahsulotimizga kim uchun qiziqish bildirgan edingiz?</li>
+            <li>6) Farzandingiz/O'zingiz necha yoshsiz? <input type="text" id="ageInput"
+                    placeholder="Yoshingizni kiriting"></li>
+            <li>7) Sizni sog'ligingizda nima bezovta qilyapti?</li>
+            <li>8) Badanda oq dog'lar, ishtahasizlik, ko'ngil aynishi, kindik atrofida og'riq, uyqusida tishini
+                g'ichirlatish, so'lak oqishi, ozg'inlik kuzatiladimi?</li>
+            <li>9) Sizga mahsulot haqida ma'lumot berishdan avval qarshi ko'rsatmalar yo'qligini bilib olmoqchiman...
+            </li>
+            <li>10) Yaqin orada sariq kasalligi (gepatit) bilan kasallanmaganmi?</li>
+            <li>11) Jigarda muammolar yoki operatsiya bo'lmaganmi?</li>
+            <li>12) Tabiiy mahsulotlarga, masalan o'simliklar gullariga yoki umuman allergiyasi yo'qmi?</li>
+            <li>13) Yaxshi, sizga mahsulot haqida ma'lumot beraman.</li>
+            <li>14) Mahsulotimiz BAD mahsuloti hisoblanadi ,Germaniya texnologiyasi asosida O'zbekistonda qadoqlanadi ,O'zbekiston musulmonlar idorasidan halol sertifikati ham bor Sog'liqni saqlash vazirligi testlaridan o'tgan
+            </li>
+            <li>15) Bizani mahsulot kurs lecheniyasi 3 oydan iborat bo'ladi ,bemorda boshlang'ich alomatlar kuzatilganligi uchun sizga bu mahsulotni tavsiya qilaman bir yarim oylik qo'shimcha vitaminlari bilan</li>
+            <li>16) Mahsulotimizning tabiiy mahsulotlardan tashkil topgan ,tarkibida Qora andiz ,Sano bargi va urug'i oddiy dastarbosh va achchiq shuvoqdan tashkil topgan</li>
+            <li>17) Tarkibidagi tanatsetin moddasi parazitlar gijjalarni pereferik asab tizimiga tasir qilib ularni falajlaydi va nobud qiladi ,Sano bargi va urug'i nobud bo'lgan parazitlarni ichni surib chiqarib yuborishga xizmat qiladi</li>
+            <li>18) Mahsulotimizda O'zbekiston bo'ylab yetkazib berish xizmatlari mavjud ,ikki kunda qo'lizga yetib boradi sertifikatlari bilan ,to'lovni mahsulotni olganingizdan keyin qilasiz</li>
+            <li>19) Mahsulotni olganizdan keyin sizdan har doim holatingizdan xabar olib turamiz</li>
+            <li>20) Mahsulotimiz haqida e'tirozingiz yo'qmi to'liq malumotga ega bo'lgan bo'lsangiz sizga mahsulotni rasmiylashtiraveramizmi ,nima qilasiz 1 oylik lecheniyani olasizmi yoki to'liq lecheniyani birdaniga olasizmi</li>
+        </ul>
+    </div>
+    <script>
+        const questions = document.getElementById('questions');
+        const recommendation = document.getElementById('recommendation');
+        const ageInput = document.getElementById('ageInput');
+
+        questions.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.add('green');
+            }
+        });
+
+        ageInput.addEventListener('input', () => {
+            const age = parseInt(ageInput.value, 10);
+            if (!isNaN(age)) {
+                localStorage.setItem('age', age);
+                recommendation.textContent = age >= 2 && age <= 12 ?
+                    "Tavsiyamiz: Sirop" :
+                    age > 12 ? "Tavsiyamiz: Kapsula" :
+                        "Yosh mos emas.";
+            } else {
+                recommendation.textContent = "Yoshni to'g'ri kiriting.";
+            }
+        });
+    </script>
+</body>
+
+</html>
